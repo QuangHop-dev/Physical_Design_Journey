@@ -40,3 +40,13 @@ I will analyze each step of the PnR flow in depth. The design will be implemente
 | 28 | Signoff | Evidence matrix and tapeout checklist |
 | 29 | Full OpenROAD Flow | Preserved run, runtime, stages, failures |
 | 30 | Final Analysis | PPA, timing, routing and next actions |
+
+## Objectives
+
+By the end of the series, I can:
+
+- explain every major RTL-to-GDS stage, its inputs, outputs, objectives, and failure modes;
+- read Verilog netlists, Liberty timing libraries, technology/cell LEF, SDC, DEF, SPEF, SDF, v.v.
+- calculate setup/hold slack and reason about clock latency, skew, uncertainty, and parasitic delay;
+- choose a floorplan, macro arrangement, PDN policy, placement density, and routing strategy;
+- debug timing, congestion, DRC, antenna, and connectivity problems..
