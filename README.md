@@ -10,8 +10,8 @@ I will analyze each step of the PnR flow in depth. The design will be implemente
 
 | Day | Topic | Practical focus |
 |---:|---|---|
-| 01 | [Physical Design Overview](days/day-01-physical-design-overview/README.md) | Stage inputs, outputs, feedback loops |
-| 02 | [Netlist & Standard Cells](days/day-02-netlist-standard-cells/README.md) | Verilog, Liberty, LEF, GDS views |
+| 01 | [Physical Design Overview](topics/01-physical-design-overview/README.md) | Stage inputs, outputs, feedback loops |
+| 02 | [Netlist & Standard Cells](topics/02-netlist-standard-cells/README.md) | Verilog, Liberty, LEF, GDS views |
 | 03 | PDK Fundamentals | Layers, vias, rules, corners |
 | 04 | Timing Fundamentals | Arrival, required time, setup/hold slack |
 | 05 | STA Basics | Path types, timing graphs, reports |
