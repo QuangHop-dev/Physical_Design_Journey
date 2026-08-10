@@ -19,10 +19,20 @@
 **CMOS Inverter — Physical Structure and Layout**
 
 <p align="center">
-  <img src="./images/cmos_inverter_overview.png"
+  <img src="../../assets/topic-01/cmos_inverter_physical_shape.png"
        alt="CMOS inverter physical structure and layout"
        width="850">
 </p>
+
+A CMOS inverter consists of an **nMOS transistor** formed in the p-substrate and a **pMOS transistor** formed inside an n-well.
+
+- The gates of both transistors are connected together to form the input **A**.
+- Their drains are connected together to form the output **Y**.
+- The nMOS source is connected to **GND**, while the pMOS source is connected to **VDD**.
+- **Substrate tap** and **well tap** provide proper body connections to GND and VDD.
+- The physical layout represents these devices using diffusion, polysilicon, contacts, wells, and metal interconnect layers.
+
+
 
 
 
