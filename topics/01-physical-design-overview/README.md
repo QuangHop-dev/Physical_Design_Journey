@@ -88,18 +88,22 @@ UF = \frac{\text{Standard cell area} + \text{Macro area}}
 {\text{Total Area}} \times 100
 $$
 
-- **AR (Aspect Ratio) = Height / Width**
-
+$$
+\text{AR (Aspect Ratio)} = \text{Height / Width}
+$$
 ---
 
 ### Pre-placed
 
-**Pre-placed:** Special blocks that are fixed in position before tool does.
+**Pre-placed:** Special blocks that are fixed in position before tool does. Examples: SRAM, ROM, PLL, DSP, ...
 
-**Examples:** SRAM, ROM, PLL, DSP, ...
+**Purpose:** Fixed location for large macro or important cells to optimize timing and routing.
 
-**Purpose:**  
-Fixed location for large or important cells to optimize timing and routing.
+---
+
+### Pin-Placement
+
+**Pin here:** I/O port or block-level pin of the design. Determining the location of these pins around the boundary of the core/block.
 
 </td>
 
@@ -115,6 +119,7 @@ Fixed location for large or important cells to optimize timing and routing.
 
 ### Powerplanning 
 ---
+This is step of designing the power delivery network for the chip. Follow the step like below:
 
 <img src="../../assets/topic-01/PDN.png"
      alt="Pre-placed cells in floorplanning"
@@ -123,6 +128,88 @@ Fixed location for large or important cells to optimize timing and routing.
 </td>
 </tr>
 
+**Purpose**: deliver VDD and VSS from IO pads to each standard cell & macro in the core in a sufficient, stable, and balance.
 
+### 3.2. Placement (PreCTS)
+---
+<table>
+<tr>
+<td width="30%" valign="top">
 
+### Global Placement:  
+- Estimate the preliminary position for all the standard cell based connectivity. 
+- Ignored grid details
 
+**Purpose:** 
+- Keep cells close together according to netlist to reduce wirelength. 
+- Create uniform distribution.
+
+</td>
+
+<td width="70%" valign="top">
+
+<img src="../../assets/topic-01/global_placement.png"
+     alt="Pre-placed cells in floorplanning"
+     width="100%">
+
+</td>
+</tr>
+</table>
+
+---
+<table>
+<tr>
+<td width="30%" valign="top">
+
+### Legalization:  
+- Covert cell position from global placement to valid coodinates on rows.
+
+- Solves the following cases:
+     - Cell is overlapping.
+     - Cell is not on the grid.
+     - Cell overflows outside the core area
+
+**Purpose:** 
+- Make the design legal before optimization
+
+</td>
+
+<td width="70%" valign="top">
+
+<img src="../../assets/topic-01/legalization.png"
+     alt="Pre-placed cells in floorplanning"
+     width="100%">
+
+</td>
+</tr>
+</table>
+
+---
+<table>
+<tr>
+<td width="30%" valign="top">
+
+### Optimizing placement continued: 
+- Add buffer, upsizing/downsizing cells.
+- Re-placement some cells.
+- Reduce the number of nets running through overloaded areas.
+- Move cells to reduce switching power.
+
+**Purpose:** 
+- Improve setup timing before CTS.
+- Make routing easier.
+- Reduce dynamic power by limiting wirelength
+
+</td>
+
+<td width="70%" valign="top">
+
+<img src="../../assets/topic-01/Optimized_placement.png"
+     alt="Pre-placed cells in floorplanning"
+     width="100%">
+
+</td>
+</tr>
+</table>
+
+---
