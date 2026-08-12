@@ -75,8 +75,8 @@ A CMOS inverter consists of an **nMOS transistor** formed in the p-substrate and
        width="850">
 </p>
 
-### Floorplanning – Utilization Factor and Pre-placed
-
+### 3.1. Floorplanning – Utilization Factor and Pre-placed
+---
 <table>
 <tr>
 <td width="50%" valign="top">
@@ -112,6 +112,16 @@ Fixed location for large or important cells to optimize timing and routing.
 </td>
 </tr>
 </table>
+
+### Powerplanning 
+---
+
+<img src="../../assets/topic-01/PDN.png"
+     alt="Pre-placed cells in floorplanning"
+     width="100%">
+
+</td>
+</tr>
 
 
 
