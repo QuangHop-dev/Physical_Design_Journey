@@ -301,3 +301,5 @@ Result after **inserting buffer/inverter** and adjust the number of those; balan
 </td>
 </tr>
 </table>
+
+---
