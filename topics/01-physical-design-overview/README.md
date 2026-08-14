@@ -212,4 +212,92 @@ This is step of designing the power delivery network for the chip. Follow the st
 </tr>
 </table>
 
+### 3.3. Clock Tree Synthesis (CTS)
 ---
+### Define: 
+CTS is a step in PnR flow used to build the clock distribution network from the clock source (PLL, clock pin) to all sequential elements (flip-flop, latch).
+
+### Follow the order below:
+
+<table>
+<tr>
+
+<td width="50%" valign="top">
+
+- **Choose topology based on:**
+  - Skew target
+  - Insertion delay target
+  - Power and performance trade-off
+
+- **Insert clock buffer/inverter cells from library**
+
+- **Check to ensure timing rules (Post-CTS timing analysis)**
+  - Ensure setup time
+  - Ensure hold time
+</td>
+<td width="50%" valign="middle">
+<img src="../../assets/topic-01/cts_overview.png"
+     alt="Clock Tree Structure"
+     width="100%">
+</td>
+</tr>
+</table>
+
+---
+<table>
+<tr>
+
+<td width="50%" valign="top">
+
+Result after completing **clock tree planning**, choosing topology (ex. with H-tree)  
+**Purpose:** select appropriate topology and optimize the line to reduce latency
+
+<img src="../../assets/topic-01/cts_planning.png"
+     alt="Clock Tree Structure"
+     width="100%">
+</td>
+<td width="50%" valign="top">
+
+Result after **inserting buffer/inverter** and adjust the number of those; balance the skew between branches  
+**Purpose:** Reduce fanout; Keep slew within limits; Balance branch lag.
+
+<img src="../../assets/topic-01/insert_inv_buf.png"
+     alt="Clock Tree Structure"
+     width="100%">
+</td>
+</tr>
+</table>
+
+---
+### Types of Clock Tree Structure
+<table>
+<tr>
+
+<td width="50%" valign="top">
+
+**H-tree clock structure**
+
+<img src="../../assets/topic-01/h_tree.png"
+     alt="Clock Tree Structure"
+     width="100%">
+**Geometric Matching Algorithm structure**
+
+<img src="../../assets/topic-01/GMA.png"
+     alt="Clock Tree Structure"
+     width="100%">
+</td>
+<td width="50%" valign="top">
+
+**X-tree clock structure** 
+
+<img src="../../assets/topic-01/x_tree.png"
+     alt="Clock Tree Structure"
+     width="100%">
+**Fish bone clock structure, etc.**
+
+<img src="../../assets/topic-01/fish_bone.png"
+     alt="Clock Tree Structure"
+     width="100%">
+</td>
+</tr>
+</table>
