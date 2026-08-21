@@ -146,7 +146,7 @@ This is step of designing the power delivery network for the chip. Follow the st
 
 </td>
 
-<td width="70%" valign="top">
+<td width="70%" valign="middle">
 
 <img src="../../assets/topic-01/global_placement.png"
      alt="Pre-placed cells in floorplanning"
@@ -174,7 +174,7 @@ This is step of designing the power delivery network for the chip. Follow the st
 
 </td>
 
-<td width="70%" valign="top">
+<td width="70%" valign="middle">
 
 <img src="../../assets/topic-01/legalization.png"
      alt="Pre-placed cells in floorplanning"
@@ -202,7 +202,7 @@ This is step of designing the power delivery network for the chip. Follow the st
 
 </td>
 
-<td width="70%" valign="top">
+<td width="70%" valign="middle">
 
 <img src="../../assets/topic-01/Optimized_placement.png"
      alt="Pre-placed cells in floorplanning"
@@ -302,4 +302,58 @@ Result after **inserting buffer/inverter** and adjust the number of those; balan
 </tr>
 </table>
 
+### 3.4. Routing
 ---
+
+<table>
+<tr>
+
+<td width="30%" valign="top">
+
+### Define:
+Based on the logical connectivity, connections are made. This step is done in a way that the paths should meet the constraints.
+
+**The routing is executed in steps below:**
+- Global Routing
+- Detailed Routing
+
+</td>
+<td width="70%" valign="middle">
+<img src="../../assets/topic-01/routing.png"
+     alt="Clock Tree Structure"
+     width="100%">
+</td>
+</tr>
+</table>
+
+## *Summary of ASIC backend steps
+
+| Stage | Principal inputs | Principal outputs | Primary question |
+|---|---|---|---|
+| Synthesis | RTL, .sdc, .lib | gate netlist, area/timing reports | Which cells implement the logic? |
+| Floorplan | netlist, LEF , die constraints (.sdc) | rows, tracks, macro and pin plan | Can the design fit and connect? |
+| PDN | power intent (UPF), layer rules (.techlef) | rails, straps, rings, vias | Can current reach every load safely? |
+| Placement | .lib, .sdc, (UPF) | legal cell coordinates | Are wirelength, timing, and congestion viable? |
+| CTS | .lib, .sdc | clock buffers and routed/estimated tree | Can clock reach all sinks with controlled latency/skew? |
+| Routing | .lib, .sdc, rules (.techlef) | guides, wires, vias, DRC markers | Can every net be connected legally? |
+| Extraction/STA | routed layout, .lib, .sdc | SPEF, timing paths, slack | Does timing close with layout parasitics? |
+| Signoff & verification | GDS/netlist/rule decks, SPEF | DRC/LVS/antenna/density results | Does geometry match intent and process rules? |
+
+## *Key Terms
+
+- **PPA:** power, performance, and area.
+- **QoR:** quality of results, a set of measurable design outcomes.
+- **PDK:** process design kit containing technology rules, models, and tool collateral.
+- **PVT corner:** process, voltage, and temperature condition.
+- **MCMM:** multi-corner, multi-mode analysis.
+- **ECO:** engineering change order applied late in the flow.
+
+## References
+
+- [VLSI TALKS](https://vlsitalks.com/physical-design/)
+- [OpenROAD flow overview](https://openroad.readthedocs.io/en/latest/main/README.html)
+- [OpenLane architecture: states, steps, and flows](https://openlane2.readthedocs.io/en/latest/reference/architecture.html)
+
+## Navigation
+
+To be continued
